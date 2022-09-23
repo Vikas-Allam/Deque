@@ -1,0 +1,39 @@
+#include<iostream>
+#include<deque>
+#include<iterator>
+#include<algorithm>
+using namespace std;
+int main()
+{
+    deque<int>nums;
+    deque<int>nums2;
+   deque<int>nums3(9);
+    deque<int>::iterator i;
+    nums.push_back(11);   
+    nums.push_back(14);
+    nums.push_back(21);
+    nums.push_back(3);
+    nums.push_back(12);
+
+    nums2.push_front(2);
+        nums2.push_front(5);
+            nums2.push_front(7);
+                nums2.push_front(1);
+                cout<<"size:"<<nums.size()<<endl;
+                cout<<"capacity:"<<nums.max_size()<<endl;
+ 
+       merge(nums.begin(),nums.end(),nums2.begin(),nums2.end(),nums3.begin());
+       sort(nums3.begin(),nums3.end());
+        for(int x:nums3)
+       {
+           cout<<x<<endl;
+       }
+       nums3.pop_front();
+             nums3.pop_front(); 
+             cout<<"---------------"<<endl;
+     for(int x:nums3)
+       {
+           cout<<x<<endl;
+       }
+          
+}
